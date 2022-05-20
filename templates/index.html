@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/mainpage.css') }}" />
+    <title>Home Page</title>
+</head>
+
+<body
+    style="background-color:lightgrey;background-size:cover;background-repeat: no-repeat ;display: block;font-size: 200%;">
+    <p style="font-family:'Times New Roman', Times, serif;font-size: 150%;text-align: center;">Welcome to House price
+        Prediction</p>
+
+    <p style="font-family:'Times New Roman', Times, serif;font-size: 150%;text-align: center;">For the House Price
+        Prediction model :</p>
+    <div class="container" style="text-align:center">
+        <form action="" method="POST">
+            <input class="btn btn-score" type="submit" name='action' value="Check Score">
+            <input class="btn btn-predict" type="submit" name='action' value="Check Prediction">
+
+            <!-- <a href="{{ url_for('score') }}" class="btn btn-score">Check Score</a>
+            <a href="{{ url_for('predict') }}" class="btn btn-predict">Check Prediction</a> -->
+        </form>
+    </div>
+</body>
+
+</html>

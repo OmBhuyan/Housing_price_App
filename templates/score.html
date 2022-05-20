@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/score.css') }}" />
+    <title>Home</title>
+</head>
+
+<body style="background-color: lightgrey;background-repeat: no-repeat;background-size: cover;">
+    <p style="font-family:'Times New Roman', Times, serif;font-size: larger;text-align: center;font-size: 300%;">SCORE
+        FOR THE HOUSE
+        PRICE PREDICTION MODEL</p>
+
+    <ul>
+        <li>
+            <h4 style="font-size:200% ;">RMSE (Root mean square error): {{ data['rmse'] }}</h4>
+        </li>
+        <li>
+            <h4 style="font-size:200% ;"> MAE (Mean Absolute error): {{ data['mae'] }}</h4>
+        </li>
+        <li>
+            <h4 style="font-size:200% ;"> R2 (R-squared) : {{ data['r2'] }}</h4>
+        </li>
+
+    </ul>
+
+</body>
+
+</html>
