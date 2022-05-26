@@ -49,13 +49,11 @@ def eval_model(model, data):
         R2 socre of the model.
     """
 
-    # logger.info("Loading model...")
-    # model = joblib.load(model_path)
-    # logger.info("Loading model complete.")
+   
 
-    # logger.info("Loading test data..")
+    
     test_data = data  # load_housing_data(data_path)
-    # logger.info("Loading data complete.")
+   
 
     housing_prepared_test = test_data.drop("median_house_value", axis=1)
     test_actual = test_data["median_house_value"]
@@ -63,8 +61,5 @@ def eval_model(model, data):
     rmse = np.sqrt(mean_squared_error(test_actual, pred))
     mae = mean_absolute_error(test_actual, pred)
     r2 = r2_score(test_actual, pred)
-    # logger.info("Model performance : ")
-    # logger.info("RMSE :%s", rmse)
-    # logger.info("MAE :%s", mae)
-    # logger.info("R2 :%s", r2)
+    
     return rmse, mae, r2
