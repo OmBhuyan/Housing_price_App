@@ -33,7 +33,4 @@
 
 # Flask App URL
 http://localhost:5000/
-<<<<<<< HEAD
-=======
 
->>>>>>> main
