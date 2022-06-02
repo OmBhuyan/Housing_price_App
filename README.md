@@ -2,11 +2,19 @@
 
 
 # What?
-<br>1. Create a Flask App with post method(with name predict) that does scoring for house price prediction model
-<br>2. During the app startup, load the model from Azure Blob storage. Create a blob directory and place the model file so that everyone can use the same. Make sure model is loaded only once.
-<br>3. Use the loaded model object in the predict method to do the scoring.
-<br>4. Log the model request and its prediction.
-<br>5. Deploy and test the app locally using a rest client. Pls use the host as 0.0.0.0
+<br>Create a Dockerfile that adds the flask app created as part of previous assignments.
+<br>Expose the port 5000 in the Dockerfile
+<br>Use guicorn command that adds the flask app as the entry point
+<br>Build the docker image
+<br>Test the docker image locally
+<br>Push the Dockerfile to the repo
+
+# How to Run Image
+<br> 1. Build the Image from the Dockerfile using command ```docker build -t ombhuyan2710/nanotest:latest .```
+<br> 2. To check if the image is created on local host and its size use command ```docker images```
+<br> 3. Start a Container Using the Image. ```docker run --name nanotest -it ombhuyan2710/nanotest```
+<br> 4. Once the image is running test the app on localhost,once the app is running fine stop and delete the container from docker Desktop.
+
 
 # Screenshots
 
@@ -33,7 +41,4 @@
 
 # Flask App URL
 http://localhost:5000/
-<<<<<<< HEAD
-=======
 
->>>>>>> main
