@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ombhuyan-housing-app-deployment
+  labels:
+    app: ombhuyan-housing-pred
+spec:
+  selector:
+    matchLabels:
+      app: ombhuyan-housing-pred
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ombhuyan-housing-pred
+    spec:
+      containers:
+        - name: housingapp
+          image: cdpipelineacr.azurecr.io/om/housingapp
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ombhuyan-housing-app-service
+  labels:
+    app: ombhuyan-housing-pred
+spec:
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: ombhuyan-housing-pred
+  type: LoadBalancer
+
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ombhuyan1-housing-app-network-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: ombhuyan-housing-pred
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 182.75.0.0/16
+            except:
+              - 182.75.1.0/24
+      ports:
+        - protocol: TCP
+          port: 5000
