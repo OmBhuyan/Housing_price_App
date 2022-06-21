@@ -2,43 +2,41 @@
 
 
 # What?
-<br>Create a Dockerfile that adds the flask app created as part of previous assignments.
-<br>Expose the port 5000 in the Dockerfile
-<br>Use guicorn command that adds the flask app as the entry point
-<br>Build the docker image
-<br>Test the docker image locally
-<br>Push the Dockerfile to the repo
+<br> 1. Create a manifest file for kubernetes deployment object and include flask app docker image in the container config.
+<br> 2. Add necessary labels to map the deployment with service for exposing the app to the internet.
+<br> 3. Create a manifest file for kubernetes service object and map the service to the deployment.
+<br> 4. App should be accessible only from tiger vpn (Important). Make necessary firewall settings.
+<br> 5. Test the app from your local
 
-# How to Run Image
-<br> 1. Build the Image from the Dockerfile using command ```docker build -t ombhuyan2710/nanotest:latest .```
-<br> 2. To check if the image is created on local host and its size use command ```docker images```
-<br> 3. Start a Container Using the Image. ```docker run --name nanotest -it ombhuyan2710/nanotest```
-<br> 4. Once the image is running test the app on localhost,once the app is running fine stop and delete the container from docker Desktop.
+PS: Deploy the app in the kubernetes cluster (AKS)
+
+# How to Deploy
+<br> 1. After creating the deployment.yaml file login to az using ```az login``` command.
+<br> 2. connect to aks cluster using the below commands:```az account set --subscription 8cbfc19a-ed09-496d-8b87-3f3a46f7b9a5```
+<br>     ```az aks get-credentials --resource-group rg-pvtendpt-test --name cdpipeline-azfunctest```
+<br> 3. After connecting to the cluster deploy the app using deployment.yaml file. command used:```kubectl create -f deployment.yaml```
+<br> 4. Once the app is deployed on the cluster use the external IP assigned to run the app.(url given below)
+
 
 
 # Screenshots
 
-
-
-![Screenshot (31)](https://user-images.githubusercontent.com/92777791/169530173-ba3517de-d05f-4e0d-8a37-e09135c4e1b8.png)
+![Screenshot (36)](https://user-images.githubusercontent.com/92777791/174748778-f4f79da3-08cf-4366-ad37-55361d2da519.png)
 
 
 
 
-![Screenshot (32)](https://user-images.githubusercontent.com/92777791/169530195-ccb8bc42-557b-49fd-87d9-a4550383df3e.png)
+![Screenshot (37)](https://user-images.githubusercontent.com/92777791/174748801-b448a5ce-73c5-4ef1-9374-a975892fb41a.png)
 
 
 
 
 
-![Screenshot (33)](https://user-images.githubusercontent.com/92777791/169530210-4e885b8f-cb48-475b-ba45-f00a1e454672.png)
+![Screenshot (38)](https://user-images.githubusercontent.com/92777791/174748884-33256bce-96cb-4a41-a827-0b04f231650a.png)
 
 
-# How external user run the app
-<br>1.clone the repo into their system.
-<br>2. Run the app.py file.
-<br>3. Browse the the link given below.
+
 
 # Flask App URL
-http://localhost:5000/
+http://20.237.8.255:5000/
 
