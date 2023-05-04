@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Operation in S3</title>
+</head>
+
+<body>
+    <div class="content">
+        <h3>List of files created are</h3>
+        <div>
+            <ol>
+                {% for item in files %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
