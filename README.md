@@ -1,8 +1,8 @@
 # To run in local
--> clone the aws_exploration repo (git clone https://github.com/OmBhuyan/aws_exploration.git)
--> switch to enh/issue#1/EC2-flaskapp branch
--> Run python3 app.py
--> check the localhost:8085 in your browser.
+-> clone the aws_exploration repo (git clone https://github.com/OmBhuyan/aws_exploration.git)<br>
+-> switch to enh/issue#1/EC2-flaskapp branch<br>
+-> Run python3 app.py<br>
+-> check the localhost:8085 in your browser.<br>
 
 # To run in an EC2 instance
 ## Launch an Amazon EC2 instance 
@@ -60,7 +60,7 @@ ssh -i /path/<my-key-pair>.pem ec2-user@my-instance-IPv4-address
 
 ## Copy files into the EC2-Instance
 
--> clone the aws_exploration repo (git clone https://github.com/OmBhuyan/aws_exploration.git)
--> switch to enh/issue#1/EC2-flaskapp branch
--> Run python3 app.py
--> check  "http://public-ip:8085/" in your browser.
+-> clone the aws_exploration repo (git clone https://github.com/OmBhuyan/aws_exploration.git)<br>
+-> switch to enh/issue#1/EC2-flaskapp branch<br>
+-> Run python3 app.py<br>
+-> check  "http://public-ip:8085/" in your browser.<br>
